@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lecture Notes</title>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                 "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, #ffffff, #e6e7ea),
+        linear-gradient(180deg, #f4f5f7, #dfe1e6);
+    color: #111;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+.back-btn {
+    font-size: 22px;
+    cursor: pointer;
+    color: #4a90e2;
+}
+
+/* Container */
+.container {
+    max-width: 520px;
+    margin: auto;
+    padding: 22px;
+}
+
+/* Note Card */
+.note-card {
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(25px) saturate(160%);
+    -webkit-backdrop-filter: blur(25px) saturate(160%);
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.45);
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.12),
+        inset 0 1px 0 rgba(255,255,255,0.7);
+
+    padding: 18px;
+    margin-bottom: 18px;
+}
+
+/* Top row */
+.note-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subject {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.file-type {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(74,144,226,0.15);
+    color: #4a90e2;
+}
+
+/* Meta */
+.meta {
+    font-size: 0.85rem;
+    color: #374151;
+    margin-top: 6px;
+}
+
+/* Action */
+.note-action {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.btn {
+    border: none;
+    background: rgba(74,144,226,0.15);
+    color: #4a90e2;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.btn:active {
+    opacity: 0.6;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <span class="material-icons back-btn" onclick="location.href='index.html'">
+        arrow_back_ios
+    </span>
+    <div>Lecture Notes</div>
+</header>
+
+<div class="container">
+
+    <div class="note-card">
+        <div class="note-top">
+            <div class="subject">Mathematics</div>
+            <div class="file-type">PDF</div>
+        </div>
+        <div class="meta">Lecturer: Mr. Ahmad</div>
+        <div class="note-action">
+            <div class="date">Uploaded: 12 Jan 2026</div>
+            <button class="btn">View</button>
+        </div>
+    </div>
+
+    <div class="note-card">
+        <div class="note-top">
+            <div class="subject">Computer Science</div>
+            <div class="file-type">PPT</div>
+        </div>
+        <div class="meta">Lecturer: Dr. Siti</div>
+        <div class="note-action">
+            <div class="date">Uploaded: 10 Jan 2026</div>
+            <button class="btn">Download</button>
+        </div>
+    </div>
+
+    <div class="note-card">
+        <div class="note-top">
+            <div class="subject">Physics</div>
+            <div class="file-type">PDF</div>
+        </div>
+        <div class="meta">Lecturer: Mr. Farhan</div>
+        <div class="note-action">
+            <div class="date">Uploaded: 8 Jan 2026</div>
+            <button class="btn">View</button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

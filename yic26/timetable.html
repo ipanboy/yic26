@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timetable</title>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, #ffffff, #e6e7ea),
+        linear-gradient(180deg, #f4f5f7, #dfe1e6);
+    color:#111;
+    display:flex;
+    flex-direction:column;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top:0;
+    z-index:10;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    padding:16px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:1.2rem;
+    font-weight:600;
+    border-bottom:1px solid rgba(255,255,255,0.4);
+}
+
+.back-btn {
+    font-size:22px;
+    cursor:pointer;
+    color:#4a90e2;
+}
+
+/* Container */
+.container {
+    padding:16px;
+    max-width: 520px;
+    margin:auto;
+    overflow-x:auto;
+}
+
+/* Grid */
+.timetable {
+    display:grid;
+    grid-template-columns: 60px repeat(5, 1fr); /* time + 5 days */
+    gap: 8px;
+}
+
+/* Time label */
+.time-label {
+    background: rgba(255,255,255,0.45);
+    backdrop-filter: blur(16px);
+    border-radius: 14px;
+    text-align:center;
+    padding:6px 0;
+    font-size:0.85rem;
+    font-weight:500;
+}
+
+/* Day header */
+.day-label {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(16px);
+    border-radius:14px;
+    text-align:center;
+    padding:8px 0;
+    font-weight:600;
+}
+
+/* Course block */
+.course {
+    border-radius:16px;
+    padding:6px 4px;
+    font-size:0.85rem;
+    font-weight:600;
+    color:white;
+    text-align:center;
+    line-height:1.2rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    min-height:50px;
+}
+
+/* Course colors */
+.yellow { background:#f2c94c; color:#111;}
+.orange { background:#f2994a; }
+.purple { background:#9b51e0; }
+
+/* Empty cell */
+.empty {
+    min-height:50px;
+}
+
+/* Mobile tweaks */
+@media(max-width:420px){
+    .timetable {
+        grid-template-columns: 50px repeat(5, 1fr);
+        gap:6px;
+    }
+    .course { font-size:0.75rem; min-height:40px;}
+    .time-label { font-size:0.75rem;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <span class="material-icons back-btn" onclick="location.href='index.html'">
+        arrow_back_ios
+    </span>
+    <div>Timetable</div>
+</header>
+
+<div class="container">
+    <div class="timetable">
+        <!-- Days header -->
+        <div></div>
+        <div class="day-label">Mon</div>
+        <div class="day-label">Tue</div>
+        <div class="day-label">Wed</div>
+        <div class="day-label">Thu</div>
+        <div class="day-label">Fri</div>
+
+        <!-- 09:00 -->
+        <div class="time-label">09</div>
+        <div class="course yellow">PHCF 0215<br>Sect. 487</div>
+        <div class="empty"></div>
+        <div class="course purple">ICTF 0513<br>Sect. 487</div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+
+        <!-- 10:00 -->
+        <div class="time-label">10</div>
+        <div class="course purple">ICTF 0513<br>Sect. 487</div>
+        <div class="course orange">MTCF 0114<br>Sect. 487</div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+
+        <!-- 11:00 -->
+        <div class="time-label">11</div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+
+        <!-- 12:00 -->
+        <div class="time-label">12</div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+
+        <!-- 13:00 -->
+        <div class="time-label">13</div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+
+        <!-- 14:00 -->
+        <div class="time-label">14</div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="course yellow">PHCF 0215<br>Sect. 487</div>
+        <div class="empty"></div>
+
+        <!-- 15:00 -->
+        <div class="time-label">15</div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+
+        <!-- 16:00 -->
+        <div class="time-label">16</div>
+        <div class="course yellow">PHCF 0215<br>Sect. 487</div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="course orange">MTCF 0114<br>Sect. 487</div>
+
+        <!-- 17:00 -->
+        <div class="time-label">17</div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+
+    </div>
+</div>
+
+</body>
+</html>

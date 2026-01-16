@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facilities Booking</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, #ffffff, #e6e7ea),
+        linear-gradient(180deg, #f4f5f7, #dfe1e6);
+    color:#111;
+    display:flex;
+    flex-direction:column;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top:0;
+    z-index:10;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    padding:16px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:1.2rem;
+    font-weight:600;
+    border-bottom:1px solid rgba(255,255,255,0.4);
+}
+
+.back-btn {
+    font-size:22px;
+    cursor:pointer;
+    color:#4a90e2;
+}
+
+/* Container */
+.container {
+    padding:16px;
+    max-width: 800px;
+    margin:auto;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap:16px;
+}
+
+/* Facility Card */
+.facility-card {
+    background: rgba(255,255,255,0.45);
+    backdrop-filter: blur(16px);
+    border-radius:16px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-height:180px;
+    text-align:center;
+    border: 1px solid rgba(255,255,255,0.35);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.facility-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.facility-card .material-icons {
+    font-size:48px;
+    color:#5b5f66;
+    margin-bottom:12px;
+}
+
+.facility-card h3 {
+    font-size:1.1rem;
+    font-weight:600;
+    color:#111;
+}
+
+.facility-card p {
+    font-size:0.85rem;
+    color:#555;
+    margin-top:5px;
+}
+
+/* Book Now button */
+.facility-action {
+    margin-top:12px;
+    font-size:0.9rem;
+    color:#000000;
+    cursor:pointer;
+    text-align:center;
+    font-weight:600;
+    transition: opacity 0.2s ease;
+}
+
+.facility-action:active {
+    opacity:0.6;
+}
+
+/* Mobile tweaks */
+@media(max-width:420px){
+    .facility-card {
+        padding:16px;
+        min-height:150px;
+    }
+    .facility-card .material-icons {
+        font-size:36px;
+    }
+    .facility-card h3 {
+        font-size:1rem;
+    }
+    .facility-action {
+        font-size:0.85rem;
+    }
+}
+</style>
+</head>
+
+<body>
+<header>
+    <span class="material-icons back-btn" onclick="location.href='index.html'">
+        arrow_back_ios
+    </span>
+    <div>Facilities Booking</div>
+</header>
+
+<div class="container">
+    <!-- Lab 1 -->
+    <div class="facility-card">
+        <span class="material-icons">science</span>
+        <h3>Lab 1</h3>
+        <p>Capacity: 30</p>
+        <div class="facility-action" onclick="location.href='timetablevenue.html'">
+            VIEW
+        </div>
+    </div>
+
+    <!-- Lab 2 -->
+    <div class="facility-card">
+        <span class="material-icons">science</span>
+        <h3>Lab 2</h3>
+        <p>Capacity: 25</p>
+        <div class="facility-action" onclick="location.href='timetablevenue.html'">
+            VIEW
+        </div>
+    </div>
+
+    <!-- Lecture Hall -->
+    <div class="facility-card">
+        <span class="material-icons">school</span>
+        <h3>Lecture Hall</h3>
+        <p>Capacity: 100</p>
+        <div class="facility-action" onclick="location.href='timetablevenue.html'">
+            VIEW
+        </div>
+    </div>
+
+    <!-- Exam Hall -->
+    <div class="facility-card">
+        <span class="material-icons">assignment</span>
+        <h3>Exam Hall</h3>
+        <p>Capacity: 120</p>
+        <div class="facility-action" onclick="location.href='timetablevenue.html'">
+            VIEW
+        </div>
+    </div>
+
+    <!-- Khawarizmi Hall -->
+    <div class="facility-card">
+        <span class="material-icons">apartment</span>
+        <h3>Khawarizmi Hall</h3>
+        <p>Capacity: 80</p>
+        <div class="facility-action" onclick="location.href='timetablevenue.html'">
+            VIEW
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

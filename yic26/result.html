@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Result Tracking</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, #ffffff, #e6e7ea),
+        linear-gradient(180deg, #f4f5f7, #dfe1e6);
+    color:#111;
+    display:flex;
+    flex-direction:column;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top:0;
+    z-index:10;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    padding:16px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:1.2rem;
+    font-weight:600;
+    border-bottom:1px solid rgba(255,255,255,0.4);
+}
+
+.back-btn {
+    font-size:22px;
+    cursor:pointer;
+    color:#4a90e2;
+}
+
+/* Container */
+.container {
+    padding:16px;
+    max-width: 600px;
+    margin:auto;
+    width:100%;
+}
+
+/* CGPA Summary Card */
+.cgpa-card {
+    background: rgba(255,255,255,0.45);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius:20px;
+    padding:20px;
+    margin-bottom:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.cgpa-card h2 {
+    font-size:2rem;
+    margin-bottom:6px;
+    color:#2fc4a1;
+}
+
+.cgpa-card p {
+    font-size:0.9rem;
+    color:#555;
+}
+
+/* Semester Result Cards */
+.semester-card {
+    background: rgba(255,255,255,0.45);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius:16px;
+    padding:16px;
+    margin-bottom:16px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.semester-card:hover {
+    transform: translateY(-3px);
+    box-shadow:0 12px 25px rgba(0,0,0,0.15);
+}
+
+.semester-header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+}
+
+.semester-header h3 {
+    font-size:1.1rem;
+    font-weight:600;
+    color:#111;
+}
+
+.semester-header .pointer {
+    font-size:1rem;
+    font-weight:600;
+    color:#4a90e2;
+}
+
+.course-list {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:8px;
+}
+
+.course-item {
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(16px);
+    border-radius:12px;
+    padding:8px 10px;
+    font-size:0.85rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.course-item span {
+    font-weight:500;
+}
+
+@media(max-width:420px){
+    .cgpa-card h2 { font-size:1.6rem; }
+    .semester-header h3 { font-size:1rem; }
+    .semester-header .pointer { font-size:0.95rem; }
+    .course-list { grid-template-columns: 1fr; }
+    .course-item { font-size:0.8rem; padding:6px 8px; }
+}
+</style>
+</head>
+
+<body>
+<header>
+    <span class="material-icons back-btn" onclick="location.href='index.html'">
+        arrow_back_ios
+    </span>
+    <div>Result Tracking</div>
+</header>
+
+<div class="container">
+    <!-- CGPA Summary -->
+    <div class="cgpa-card">
+        <h2>3.75</h2>
+        <p>Current CGPA</p>
+    </div>
+
+    <!-- Semester 1 -->
+    <div class="semester-card">
+        <div class="semester-header">
+            <h3>Semester 1</h3>
+            <div class="pointer">3.60</div>
+        </div>
+        <div class="course-list">
+            <div class="course-item"><span>Mathematics</span><span>A</span></div>
+            <div class="course-item"><span>Physics</span><span>B+</span></div>
+            <div class="course-item"><span>Programming</span><span>A-</span></div>
+            <div class="course-item"><span>English</span><span>B</span></div>
+        </div>
+    </div>
+
+    <!-- Semester 2 -->
+    <div class="semester-card">
+        <div class="semester-header">
+            <h3>Semester 2</h3>
+            <div class="pointer">3.85</div>
+        </div>
+        <div class="course-list">
+            <div class="course-item"><span>Mathematics 2</span><span>A</span></div>
+            <div class="course-item"><span>Chemistry</span><span>B+</span></div>
+            <div class="course-item"><span>Data Structures</span><span>A</span></div>
+            <div class="course-item"><span>Communication</span><span>A-</span></div>
+        </div>
+    </div>
+
+    <!-- Semester 3 -->
+    <div class="semester-card">
+        <div class="semester-header">
+            <h3>Semester 3</h3>
+            <div class="pointer">3.90</div>
+        </div>
+        <div class="course-list">
+            <div class="course-item"><span>Algorithms</span><span>A</span></div>
+            <div class="course-item"><span>Database</span><span>A-</span></div>
+            <div class="course-item"><span>Networking</span><span>B+</span></div>
+            <div class="course-item"><span>Elective</span><span>A</span></div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
